@@ -93,7 +93,6 @@ export class DashboardCountriesComponent implements OnInit {
   }
 
   searchCountries(searchQuery) {
-    console.log(searchQuery);
     if(Boolean(searchQuery) && typeof(searchQuery) === 'string'){
       this.isLoading = true;
       this.searchedCountries = this.countries.filter((country)=>{
