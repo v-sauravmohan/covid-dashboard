@@ -3,12 +3,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 import { first } from 'rxjs/operators';
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
+
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   returnUrl: string;
@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
       password: ['', Validators.required]
     });
 
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+    this.returnUrl = this.route.snapshot.queryParams.returnUrl || '/';
   }
 
   get formData() { return this.loginForm.controls; }
@@ -53,6 +53,7 @@ export class LoginComponent implements OnInit {
         error => {
           this.loading = false;
           this.showErrorMessgae = true;
-        });
+        }
+      );
   }
 }

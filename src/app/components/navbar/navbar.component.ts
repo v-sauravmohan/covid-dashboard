@@ -9,7 +9,7 @@ import { AuthenticationService } from 'src/app/services/authentication/authentic
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
-  
+
   get currentUrl() {
     return this.router.url;
   }
@@ -25,11 +25,11 @@ export class NavbarComponent {
     this.router.navigate(['/login']);
   }
 
-  dashborad(){
+  dashborad() {
     this.router.navigate(["/dashboard"]);
   }
 
-  countries(){
+  countries() {
     this.router.navigate(["/dashboard-countries"]);
   }
 

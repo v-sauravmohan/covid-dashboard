@@ -1,29 +1,65 @@
 <div class="container">
-    <img class="logo vertical-center -left" src="https://assets.unenvironment.org/s3fs-public/inline-images/COVID19_RESPONSE_LOGO_HORIZONTAL_APRIL_2020.png">
-    <mat-card class="form-card vertical-center -right">
-        <mat-card-title>Login</mat-card-title>
-        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-            <div class="form-group">
-                <label class="form-label" for="username">Username</label>
-                <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': this.loginForm.dirty && formData.username.errors }" />
-                <div *ngIf="this.loginForm.dirty && formData.username.errors" class="invalid-feedback">
-                    <div *ngIf="formData.username.errors.required">Username is required</div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="form-label" for="password">Password</label>
-                <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': this.loginForm.dirty && formData.password.errors }" />
-                <div *ngIf="this.loginForm.dirty && formData.password.errors" class="invalid-feedback">
-                    <div *ngIf="formData.password.errors.required">Password is required</div>
-                </div>
-            </div>
-            <p class="error-message" *ngIf="showErrorMessgae">Incorrect username or password</p>
-            <div class="form-group">
-                <button [disabled]="loginForm.invalid" mat-raised-button color="primary">
-                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
-                    Login
-                </button>
-            </div>
-        </form>
-    </mat-card>
+  <img
+    class="logo vertical-center -left"
+    src="https://assets.unenvironment.org/s3fs-public/inline-images/COVID19_RESPONSE_LOGO_HORIZONTAL_APRIL_2020.png"
+  />
+  <mat-card class="form-card vertical-center -right">
+    <mat-card-title>Login</mat-card-title>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label class="form-label" for="username">Username</label>
+        <input
+          type="text"
+          formControlName="username"
+          class="form-control"
+          [ngClass]="{
+            'is-invalid': this.loginForm.dirty && formData.username.errors
+          }"
+        />
+        <div
+          *ngIf="this.loginForm.dirty && formData.username.errors"
+          class="invalid-feedback"
+        >
+          <div *ngIf="formData.username.errors.required">
+            Username is required
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="password">Password</label>
+        <input
+          type="password"
+          formControlName="password"
+          class="form-control"
+          [ngClass]="{
+            'is-invalid': this.loginForm.dirty && formData.password.errors
+          }"
+        />
+        <div
+          *ngIf="this.loginForm.dirty && formData.password.errors"
+          class="invalid-feedback"
+        >
+          <div *ngIf="formData.password.errors.required">
+            Password is required
+          </div>
+        </div>
+      </div>
+      <p class="error-message" *ngIf="showErrorMessgae">
+        Incorrect username or password
+      </p>
+      <div class="form-group">
+        <button
+          [disabled]="loginForm.invalid"
+          mat-raised-button
+          color="primary"
+        >
+          <span
+            *ngIf="loading"
+            class="spinner-border spinner-border-sm mr-1"
+          ></span>
+          Login
+        </button>
+      </div>
+    </form>
+  </mat-card>
 </div>

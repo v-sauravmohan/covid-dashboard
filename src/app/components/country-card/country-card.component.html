@@ -1,51 +1,51 @@
 <mat-card class="card">
-    <mat-card-header>
-      <img
-        mat-card-avatar
-        class="header-image"
-        src="{{ country?.countryInfo?.flag }}"
-      />
-      <mat-card-title>{{ country?.country }}</mat-card-title>
-      <mat-card-subtitle>{{ country?.continent }}</mat-card-subtitle>
-    </mat-card-header>
-    <div class="row justify-content-between">
-      <p class="col">Cases</p>
-      <p class="col">Deaths</p>
-      <p class="col">Recovered</p>
-    </div>
-    <div class="row justify-content-between">
-      <p class="col highlight">
-        {{ country?.cases | number }}
-      </p>
-      <p class="col highlight">
-        {{ country?.deaths | number }}
-      </p>
-      <p class="col highlight">
-        {{ country?.recovered | number }}
-      </p>
-    </div>
-    <div class="row justify-content-between">
-      <p class="col">Tests</p>
-      <p class="col">Population</p>
-      <span class="col"></span>
-    </div>
-    <div class="row justify-content-between">
-      <p class="col highlight">
-        {{ country?.tests | number }}
-      </p>
-      <p class="col highlight">
-        {{ country?.population | million: "1.0-1" }}
-      </p>
-      <span class="col"></span>
-    </div>
-    <div class="row justify-content-end">
-      <button
-        class="col-md-auto edit-button"
-        mat-raised-button
-        color="primary"
-        (click)="editCountry(country?.country)"
-      >
-        Edit
-      </button>
-    </div>
-  </mat-card>
+  <mat-card-header>
+    <img
+      mat-card-avatar
+      class="header-image"
+      src="{{ country?.countryInfo?.flag }}"
+    />
+    <mat-card-title>{{ country?.country }}</mat-card-title>
+    <mat-card-subtitle>{{ country?.continent }}</mat-card-subtitle>
+  </mat-card-header>
+  <div class="row justify-content-between">
+    <p class="col">Cases</p>
+    <p class="col">Deaths</p>
+    <p class="col">Recovered</p>
+  </div>
+  <div class="row justify-content-between">
+    <p class="col highlight">
+      {{ country?.cases | number }}
+    </p>
+    <p class="col highlight">
+      {{ country?.deaths | number }}
+    </p>
+    <p class="col highlight">
+      {{ country?.recovered | number }}
+    </p>
+  </div>
+  <div class="row justify-content-between">
+    <p class="col">Tests</p>
+    <p class="col">Population</p>
+    <span class="col"></span>
+  </div>
+  <div class="row justify-content-between">
+    <p class="col highlight">
+      {{ country?.tests | number }}
+    </p>
+    <p class="col highlight">
+      {{ country?.population | million: "1.0-1" }}
+    </p>
+    <span class="col"></span>
+  </div>
+  <div class="row justify-content-end">
+    <button
+      class="col-md-auto edit-button"
+      mat-raised-button
+      color="primary"
+      (click)="editCountry(country?.country)"
+    >
+      Edit
+    </button>
+  </div>
+</mat-card>

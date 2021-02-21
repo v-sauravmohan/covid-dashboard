@@ -9,8 +9,7 @@ export class SearchBarComponent {
 
   searchQuery = '';
 
-  @Output()
-  change = new EventEmitter<string>();
+  @Output() valueChange = new EventEmitter<string>();
 
   constructor() { }
 
@@ -19,6 +18,6 @@ export class SearchBarComponent {
   }
 
   Search() {
-    this.change.emit(this.searchQuery);
+    this.valueChange.emit(this.searchQuery);
   }
 }

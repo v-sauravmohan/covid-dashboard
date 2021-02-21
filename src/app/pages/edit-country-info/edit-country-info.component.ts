@@ -3,12 +3,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Country } from 'src/app/models/country.model';
 import { ContentService } from 'src/app/services/content/content.service';
-
 @Component({
   selector: 'app-edit-country-info',
   templateUrl: './edit-country-info.component.html',
   styleUrls: ['./edit-country-info.component.scss']
 })
+
 export class EditCountryInfoComponent implements OnInit {
 
   get formData() { return this.editCountryForm.controls; }
@@ -19,11 +19,16 @@ export class EditCountryInfoComponent implements OnInit {
   editCountryForm: FormGroup;
   isLoading = false;
 
-  constructor(private route: ActivatedRoute, private router: Router, private contentservice: ContentService, private formBuilder: FormBuilder) { }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private contentservice: ContentService,
+    private formBuilder: FormBuilder
+  ) { }
 
   ngOnInit() {
-    this.countryToBeEdited = this.route.snapshot.queryParams['country'];
-    if ( !Boolean(this.countryToBeEdited) ){ this.redirectToCountriesPage(); }
+    this.countryToBeEdited = this.route.snapshot.queryParams.country;
+    if (!Boolean(this.countryToBeEdited)) { this.redirectToCountriesPage(); }
 
     this.editCountryForm = this.formBuilder.group({
       numberOfCases: [0, Validators.required],

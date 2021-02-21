@@ -8,8 +8,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class ToggleSortComponent implements OnInit {
 
-  @Output()
-  change = new EventEmitter<string>();
+  @Output() valueChange = new EventEmitter<string>();
 
   constructor() { }
 
@@ -17,6 +16,6 @@ export class ToggleSortComponent implements OnInit {
   }
 
   sortToggleEventHandler(event) {
-    this.change.emit(event);
+    this.valueChange.emit(event);
   }
 }

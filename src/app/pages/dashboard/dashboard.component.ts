@@ -25,32 +25,32 @@ export class DashboardComponent implements OnInit {
         }
         this.totalStatistics = [
           {
-            title: "Total Cases",
+            title: 'Total Cases',
             value: this.content.cases
           },
           {
-            title: "Total Deaths",
+            title: 'Total Deaths',
             value: this.content.deaths
           },
           {
-            title: "Total Recovered",
+            title: 'Total Recovered',
             value: this.content.recovered
           }
         ];
         this.dailyStatistics = [
           {
-            title: "Cases",
+            title: 'Cases',
             value: this.content.todayCases
           },
           {
-            title: "Deaths",
+            title: 'Deaths',
             value: this.content.todayDeaths
           },
           {
-            title: "Recovered",
+            title: 'Recovered',
             value: this.content.todayRecovered
-          } 
-        ] ;  
+          }
+        ];
       }
     );
   }
