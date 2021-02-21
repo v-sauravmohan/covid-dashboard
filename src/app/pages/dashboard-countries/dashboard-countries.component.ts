@@ -1,5 +1,5 @@
-import { AfterViewChecked, Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material';
 import { Country } from 'src/app/models/country.model';
 import { ContentService } from 'src/app/services/content/content.service';
 
@@ -9,6 +9,8 @@ import { ContentService } from 'src/app/services/content/content.service';
   styleUrls: ['./dashboard-countries.component.scss']
 })
 export class DashboardCountriesComponent implements OnInit {
+
+  @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
 
   countries: Country[] = [];
   isLoading = false;
@@ -106,5 +108,6 @@ export class DashboardCountriesComponent implements OnInit {
       this.searchedCountries = this.countries;
     }
     this.isLoading = false;
+    this.paginator.firstPage();
   }
 }
