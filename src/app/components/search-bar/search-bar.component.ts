@@ -15,7 +15,6 @@ export class SearchBarComponent {
   constructor() { }
 
   setSearchQuery(event) {
-    console.log(event.target.value);
     this.searchQuery = event.target.value;
   }
 
