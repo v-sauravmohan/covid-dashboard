@@ -1,0 +1,23 @@
+.card {
+  margin-top: 20px;
+  min-width: 400px;
+  max-width: 400px;
+  overflow: visible;
+
+  .header-image {
+    background-size: cover;
+  }
+
+  .row {
+    text-align: center;
+    height: 28px;
+
+    .highlight {
+      font-weight: 500;
+    }
+
+    .edit-button {
+      margin-right: 10px;
+    }
+  }
+}

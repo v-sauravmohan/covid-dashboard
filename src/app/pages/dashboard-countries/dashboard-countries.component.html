@@ -1,0 +1,33 @@
+<ng-container *ngIf="isLoading; else elseTemplate">
+  <app-loading-spinner [showSpinner]="isLoading"></app-loading-spinner>
+</ng-container>
+<ng-template #elseTemplate>
+  <div>
+    <div class="row secondary-toolbar">
+      <app-toggle-sort
+        class="col align-self-center"
+        (change)="sortToggleEventHandler($event)"
+      ></app-toggle-sort>
+      <app-search-bar
+        class="col align-self-center"
+        (change)="searchCountries($event)"
+      ></app-search-bar>
+      <mat-paginator
+        class="col"
+        [length]="searchedCountries?.length"
+        [pageSize]="numberOfCountriesPerPage"
+        (page)="updateGrid($event)"
+      >
+      </mat-paginator>
+    </div>
+    <mat-grid-list cols="3" rowHeight="2.5:1">
+      <mat-grid-tile
+        *ngFor="let country of searchedCountries | slice: firstIndex:lastIndex"
+      >
+        <div class="container d-flex justify-content-center">
+          <app-country-card [country]="country"></app-country-card>
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</ng-template>

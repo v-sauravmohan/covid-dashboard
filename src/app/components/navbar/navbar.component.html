@@ -1,0 +1,27 @@
+<mat-toolbar *ngIf="currentUser">
+  <img
+    class="logo"
+    src="https://assets.unenvironment.org/s3fs-public/inline-images/COVID19_RESPONSE_LOGO_HORIZONTAL_APRIL_2020.png"
+  />
+  <div class="primary-menu">
+    <button
+      class="button"
+      mat-raised-button
+      [routerLink]="['/dashboard']" 
+      routerLinkActive="mat-primary"
+    >
+      <mat-icon>dashboard</mat-icon>
+      <p>Dashboard</p>
+    </button>
+    <button class="button" mat-raised-button [routerLink]="['/dashboard-countries']" 
+    routerLinkActive="mat-primary">
+      <mat-icon>flag</mat-icon>
+      <p>Countries</p>
+    </button>
+  </div>
+  <span class="spacer"></span>
+  <button class="button" mat-raised-button (click)="logout()">
+    <mat-icon>logout</mat-icon>
+    <p>Logout</p>
+  </button>
+</mat-toolbar>

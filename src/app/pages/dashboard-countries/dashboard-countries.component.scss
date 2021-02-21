@@ -1,0 +1,26 @@
+.mat-grid-list {
+  width: 100%;
+
+  .mat-grid-tile {
+    width: 100%;
+    overflow: visible;
+    margin-bottom: 25px;
+  }
+}
+
+.secondary-toolbar {
+  margin-left: 0;
+  width: 100%;
+  background-color: white;
+
+  app-toggle-sort {
+    margin-left: 10px;
+  }
+
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+}

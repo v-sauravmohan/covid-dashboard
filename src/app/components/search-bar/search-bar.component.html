@@ -1,0 +1,11 @@
+<div class="input-group">
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Search country"
+    (keyup)="setSearchQuery($event)"
+  />
+  <button mat-raised-button color="primary" (click)="Search()">
+    Search
+  </button>
+</div>
