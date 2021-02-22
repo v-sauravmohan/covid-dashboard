@@ -9,5 +9,4 @@ export class LoadingSpinnerComponent {
 
   @Input()
   showSpinner: boolean;
-
 }

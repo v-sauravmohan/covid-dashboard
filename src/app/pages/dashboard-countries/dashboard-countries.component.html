@@ -6,11 +6,11 @@
     <div class="row secondary-toolbar">
       <app-toggle-sort
         class="col align-self-center"
-        (change)="sortToggleEventHandler($event)"
+        (valueChange)="sortToggleEventHandler($event)"
       ></app-toggle-sort>
       <app-search-bar
         class="col align-self-center"
-        (change)="searchCountries($event)"
+        (valueChange)="searchCountries($event)"
       ></app-search-bar>
       <mat-paginator
         class="col"
@@ -20,7 +20,7 @@
       >
       </mat-paginator>
     </div>
-    <mat-grid-list cols="3" rowHeight="2.5:1">
+    <mat-grid-list cols="4" rowHeight="1.5:1" gutterSize="10px">
       <mat-grid-tile
         *ngFor="let country of searchedCountries | slice: firstIndex:lastIndex"
       >

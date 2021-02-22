@@ -8,9 +8,10 @@ import { ContentService } from 'src/app/services/content/content.service';
   templateUrl: './dashboard-countries.component.html',
   styleUrls: ['./dashboard-countries.component.scss']
 })
+
 export class DashboardCountriesComponent implements OnInit {
 
-  @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
+  @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
 
   countries: Country[] = [];
   isLoading = false;
@@ -31,9 +32,9 @@ export class DashboardCountriesComponent implements OnInit {
         this.countries = data;
         this.searchedCountries = data;
         this.numberOfCountriesFeatured = this.countries.length;
-        if (this.countries.length) { 
+        if (this.countries.length) {
           this.isLoading = false;
-          this.sortCountries('country-name'); 
+          this.sortCountries('country-name');
         }
       }
     );
@@ -93,9 +94,9 @@ export class DashboardCountriesComponent implements OnInit {
   }
 
   searchCountries(searchQuery) {
-    if(Boolean(searchQuery) && typeof(searchQuery) === 'string'){
+    if (Boolean(searchQuery) && typeof (searchQuery) === 'string') {
       this.isLoading = true;
-      this.searchedCountries = this.countries.filter((country)=>{
+      this.searchedCountries = this.countries.filter((country) => {
         const upperCaseSearchQuery = searchQuery.toUpperCase();
         const countryName = country.country.toUpperCase();
         if (countryName.includes(upperCaseSearchQuery)) {
