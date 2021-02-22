@@ -17,7 +17,7 @@
         <div class="form-group">
           <label class="form-label" for="numberOfCases">Cases</label>
           <input
-            type="number"
+            type="text"
             formControlName="numberOfCases"
             class="form-control"
             [ngClass]="{
@@ -32,12 +32,15 @@
             <div *ngIf="formData.numberOfCases.errors.required">
               Cases is required
             </div>
+            <div *ngIf="formData.numberOfCases.errors.pattern">
+              Numbers only
+            </div>
           </div>
         </div>
         <div class="form-group">
           <label class="form-label" for="numberOfDeaths">Deaths</label>
           <input
-            type="number"
+            type="text"
             formControlName="numberOfDeaths"
             class="form-control"
             [ngClass]="{
@@ -52,12 +55,15 @@
             <div *ngIf="formData.numberOfDeaths.errors.required">
               Deaths is required
             </div>
+            <div *ngIf="formData.numberOfDeaths.errors.pattern">
+              Numbers only
+            </div>
           </div>
         </div>
         <div class="form-group">
           <label class="form-label" for="numberOfRecovered">Recovered</label>
           <input
-            type="number"
+            type="text"
             formControlName="numberOfRecovered"
             class="form-control"
             [ngClass]="{
@@ -74,12 +80,15 @@
             <div *ngIf="formData.numberOfRecovered.errors.required">
               Recovered is required
             </div>
+            <div *ngIf="formData.numberOfRecovered.errors.pattern">
+              Numbers only
+            </div>
           </div>
         </div>
         <div class="form-group">
           <label class="form-label" for="numberOfTestsDone">Tests</label>
           <input
-            type="number"
+            type="text"
             formControlName="numberOfTestsDone"
             class="form-control"
             [ngClass]="{
@@ -95,6 +104,9 @@
           >
             <div *ngIf="formData.numberOfTestsDone.errors.required">
               Tests is required
+            </div>
+            <div *ngIf="formData.numberOfTestsDone.errors.pattern">
+              Numbers only
             </div>
           </div>
         </div>
