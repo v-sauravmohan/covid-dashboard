@@ -31,10 +31,10 @@ export class EditCountryInfoComponent implements OnInit {
     if (!Boolean(this.countryToBeEdited)) { this.redirectToCountriesPage(); }
 
     this.editCountryForm = this.formBuilder.group({
-      numberOfCases: [0, Validators.required],
-      numberOfDeaths: [0, Validators.required],
-      numberOfRecovered: [0, Validators.required],
-      numberOfTestsDone: [0, Validators.required],
+      numberOfCases: [0, [Validators.required, Validators.pattern('^[0-9]*$')]],
+      numberOfDeaths: [0, [Validators.required, Validators.pattern('^[0-9]*$')]],
+      numberOfRecovered: [0, [Validators.required, Validators.pattern('^[0-9]*$')]],
+      numberOfTestsDone: [0, [Validators.required, Validators.pattern('^[0-9]*$')]],
     });
 
     this.contentservice.$countryDashboardContent.subscribe(
@@ -72,9 +72,8 @@ export class EditCountryInfoComponent implements OnInit {
       deaths: this.formData.numberOfDeaths.value,
       recovered: this.formData.numberOfRecovered.value,
       tests: this.formData.numberOfTestsDone.value,
-    }
+    };
     this.contentservice.$countryDashboardContent.next(this.countries);
     this.redirectToCountriesPage();
   }
-
 }
