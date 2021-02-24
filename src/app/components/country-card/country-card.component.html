@@ -2,40 +2,40 @@
   <mat-card-header>
     <img
       mat-card-avatar
-      class="header-image"
+      class="header"
       src="{{ country?.countryInfo?.flag }}"
     />
-    <mat-card-title>{{ country?.country }}</mat-card-title>
+    <mat-card-title class="oneline-title">{{ country?.country }}</mat-card-title>
     <mat-card-subtitle>{{ country?.continent }}</mat-card-subtitle>
   </mat-card-header>
-  <div class="row justify-content-between">
-    <p class="col">Cases</p>
-    <p class="col">Deaths</p>
-    <p class="col">Recovered</p>
+  <div class="row align-items-end justify-content-between">
+    <span class="col">Cases</span>
+    <span class="col">Deaths</span>
+    <span class="col">Recovered</span>
   </div>
-  <div class="row justify-content-between">
-    <p class="col highlight">
+  <div class="row align-items-start justify-content-between">
+    <span class="col highlight">
       {{ country?.cases | number }}
-    </p>
-    <p class="col highlight">
+    </span>
+    <span class="col highlight">
       {{ country?.deaths | number }}
-    </p>
-    <p class="col highlight">
+    </span>
+    <span class="col highlight">
       {{ country?.recovered | number }}
-    </p>
+    </span>
   </div>
-  <div class="row justify-content-between">
-    <p class="col">Tests</p>
-    <p class="col">Population</p>
+  <div class="row align-items-end justify-content-between">
+    <span class="col">Tests</span>
+    <span class="col">Population</span>
     <span class="col"></span>
   </div>
-  <div class="row justify-content-between">
-    <p class="col highlight">
+  <div class="row align-items-start justify-content-between">
+    <span class="col highlight">
       {{ country?.tests | number }}
-    </p>
-    <p class="col highlight">
+    </span>
+    <span class="col highlight">
       {{ country?.population | million: "1.0-1" }}
-    </p>
+    </span>
     <span class="col"></span>
   </div>
   <div class="row justify-content-end">

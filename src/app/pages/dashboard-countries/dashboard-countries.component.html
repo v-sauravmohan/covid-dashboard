@@ -20,14 +20,12 @@
       >
       </mat-paginator>
     </div>
-    <mat-grid-list cols="4" rowHeight="1.5:1" gutterSize="10px">
-      <mat-grid-tile
-        *ngFor="let country of searchedCountries | slice: firstIndex:lastIndex"
-      >
-        <div class="container d-flex justify-content-center">
-          <app-country-card [country]="country"></app-country-card>
-        </div>
-      </mat-grid-tile>
-    </mat-grid-list>
+    <div class="contain-in-width">
+      <app-grid
+        [list]="searchedCountries"
+        [firstIndex]="firstIndex"
+        [lastIndex]="lastIndex"
+      ></app-grid>
+    </div>
   </div>
 </ng-template>

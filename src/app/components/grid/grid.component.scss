@@ -1,0 +1,13 @@
+.app-grid {
+  margin-top: 10px;
+  margin-bottom: 20px;
+
+  mat-grid-tile {
+    width: 25%;
+    height: 100%;
+    .card-in-tile {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
