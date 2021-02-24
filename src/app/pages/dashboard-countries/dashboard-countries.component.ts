@@ -97,8 +97,8 @@ export class DashboardCountriesComponent implements OnInit {
     if (Boolean(searchQuery) && typeof (searchQuery) === 'string') {
       this.isLoading = true;
       this.searchedCountries = this.countries.filter((country) => {
-        const upperCaseSearchQuery = searchQuery.toUpperCase();
-        const countryName = country.country.toUpperCase();
+        const upperCaseSearchQuery = searchQuery.trim().split(' ').join('').toUpperCase();
+        const countryName = country.country.trim().split(' ').join('').toUpperCase();
         if (countryName.includes(upperCaseSearchQuery)) {
           return true;
         }
