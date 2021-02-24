@@ -2,25 +2,25 @@
   <app-loading-spinner [showSpinner]="isLoading"></app-loading-spinner>
 </ng-container>
 <ng-template #elseTemplate>
-  <div class="container">
-    <h1>Total</h1>
+  <div class="contain-in-width">
+    <h2>Total</h2>
     <mat-divider></mat-divider>
     <mat-grid-list cols="3" rowHeight="150px">
       <mat-grid-tile *ngFor="let stat of totalStatistics">
         <mat-card class="stat-card">
-          <mat-card-subtitle class="center">{{ stat?.title }}</mat-card-subtitle>
-          <mat-card-title class="center">{{ stat?.value | number }}</mat-card-title>
+          <mat-card-subtitle class="text-content -alpha">{{ stat?.title }}</mat-card-subtitle>
+          <mat-card-title class="text-content -numerical-content">{{ stat?.value | number }}</mat-card-title>
         </mat-card>
       </mat-grid-tile>
     </mat-grid-list>
   
-    <h1>Today</h1>
+    <h2>Today</h2>
     <mat-divider></mat-divider>
     <mat-grid-list cols="3" rowHeight="150px">
       <mat-grid-tile *ngFor="let stat of dailyStatistics">
         <mat-card class="stat-card">
-          <mat-card-subtitle class="center">{{ stat?.title }}</mat-card-subtitle>
-          <mat-card-title class="center">{{ stat?.value | number }}</mat-card-title>
+          <mat-card-subtitle class="text-content -alpha">{{ stat?.title }}</mat-card-subtitle>
+          <mat-card-title class="text-content -numerical-content">{{ stat?.value | number }}</mat-card-title>
         </mat-card>
       </mat-grid-tile>
     </mat-grid-list>
