@@ -1,5 +1,8 @@
-.container {
-  padding-top: 100px;
+.contain-in-width {
+  width: 100%;
+  margin-top: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
 
   .mat-grid-list {
     margin-top: 25px;
@@ -15,10 +18,24 @@
     padding: 20px;
     text-align: center;
     border-radius: 10px;
-    .center {
+    line-height: 1;
+
+    .text-content {
       margin: auto;
-      width: 50%;
+      width: 100%;
       padding: 10px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .-numerical-content {
+      font-size: 4vh;
+    }
+
+    .-alpha {
+      font-size: 2vh;
+      line-height: 1;
     }
   }
 }
