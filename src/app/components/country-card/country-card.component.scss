@@ -1,19 +1,32 @@
 .card {
-  margin-top: 20px;
-  min-width: 400px;
-  max-width: 400px;
+  width: 100%;
   overflow: visible;
 
-  .header-image {
+  .header {
     background-size: cover;
+  }
+
+  .oneline-title {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
 
   .row {
     text-align: center;
     height: 28px;
 
+    .col {
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 13px;
+    }
+
     .highlight {
       font-weight: 500;
+      font-size: 20px;
     }
 
     .edit-button {

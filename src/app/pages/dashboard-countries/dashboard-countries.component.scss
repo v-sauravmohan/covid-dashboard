@@ -1,11 +1,7 @@
-.mat-grid-list {
+.contain-in-width {
   width: 100%;
-
-  .mat-grid-tile {
-    width: 100%;
-    overflow: visible;
-    margin-bottom: 25px;
-  }
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .secondary-toolbar {

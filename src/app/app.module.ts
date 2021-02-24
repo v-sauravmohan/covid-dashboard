@@ -6,13 +6,24 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DecimalPipe } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { MatButtonModule, MatButtonToggleModule, MatCardModule, MatDividerModule, MatGridListModule, MatIconModule, MatPaginatorModule, MatProgressSpinnerModule, MatToolbarModule } from '@angular/material';
+import {
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatDividerModule,
+  MatGridListModule,
+  MatIconModule,
+  MatPaginatorModule,
+  MatProgressSpinnerModule,
+  MatToolbarModule
+} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent, ToggleSortComponent, LoadingSpinnerComponent, CountryCardComponent, SearchBarComponent } from './components';
 import { MillionPipe } from './pipes/million.pipe';
 import { LoginComponent, DashboardComponent, EditCountryInfoComponent, DashboardCountriesComponent } from './pages';
 import { BackendInterceptorService } from './services';
+import { GridComponent } from './components/grid/grid.component';
 
 
 @NgModule({
@@ -27,7 +38,8 @@ import { BackendInterceptorService } from './services';
     ToggleSortComponent,
     LoadingSpinnerComponent,
     CountryCardComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    GridComponent
   ],
   imports: [
     BrowserModule,

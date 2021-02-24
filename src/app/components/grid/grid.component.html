@@ -1,0 +1,5 @@
+<mat-grid-list class="app-grid" cols="4" rowHeight="250px" gutterSize="10px">
+  <mat-grid-tile *ngFor="let item of list | slice: firstIndex:lastIndex">
+    <app-country-card class="card-in-tile" [country]="item"></app-country-card>
+  </mat-grid-tile>
+</mat-grid-list>
