@@ -5,8 +5,8 @@ import { mergeMap, materialize, delay, dematerialize } from 'rxjs/operators';
 @Injectable()
 
 export class BackendInterceptorService implements HttpInterceptor {
-    username = "fingent";
-    password = "fingent";
+    username = "admin";
+    password = "admin";
 
     constructor() { }
 
@@ -31,7 +31,7 @@ export class BackendInterceptorService implements HttpInterceptor {
 
         function authenticate() {
             const { username, password } = body;
-            if (username === 'fingent' && password === 'fingent') {
+            if (username === this.username && password === this.password) {
                 return ok(body);
             }
             return error('Username or password is incorrect');
