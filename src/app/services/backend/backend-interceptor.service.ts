@@ -31,7 +31,7 @@ export class BackendInterceptorService implements HttpInterceptor {
 
         function authenticate() {
             const { username, password } = body;
-            if (username === this.username && password === this.password) {
+            if (username === "admin" && password === "admin") {
                 return ok(body);
             }
             return error('Username or password is incorrect');
